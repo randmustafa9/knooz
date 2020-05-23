@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  
+<head>
+    {% extends 'homepage.html' %} 
+    {% load static %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <script type="text/javascript" src="{% static '/js/style1.js' %}"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="{% static '/css/stylesheet3.css' %}" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>knooz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="{% static '/css/bootstrap.min.css' %}" />
+  
+</head>
+
+<body>
+  {% block bg %}
+    <div class="center444">
+    <h1 class="header1">Welcome knooz
+
+        <a style="text-decoration:none" href="{% url 'uShouldKnowname' %}"> <button class="btn1 k" >U should know</button> </a>
+        
+
+        <button class="btn1 k1 bb" id="bb" >send Rand a msg</button>
+            <div class="content">                 
+              <form method="POST" autocomplete="off" action="sendMsg">
+                  {% csrf_token %}
+                      <input type="text" class="search__input" autocomplete="off" id="search__input" placeholder="" name="htmlMsg" required  |safe> 
+                      <button type="submit" class="ee3a" > <img class="ee3e" src="{% static '/imgs/send.png' %}" /> </button>
+              </form>
+          </div>
+
+          <a style="text-decoration:none" href="{% url 'inboxk' %}"> <button class="btn1 inbox" >inbox
+            {% if msgsnum > 0 %} <span class="badgee">{{msgsnum}}</span>{% endif %}
+          </button> </a>
+
+
+    </h1>
+    
+    
+ 
+
+
+
+    
+      
+  </div>
+
+  <script>
+
+
+
+
+    document.getElementById("bb").onclick = function() {myFunction()};
+    function myFunction() {  
+    // document.getElementById("search__input").style.fontSize = '240px';               
+      document.getElementById("search__input").className='active';             
+      }
+
+
+
+</script>
+
+
+  {% endblock %}
+</body>
+</html>

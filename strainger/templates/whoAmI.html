@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  
+<head>
+    {% extends 'homepage.html' %} 
+    {% load static %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <script type="text/javascript" src="{% static '/js/style1.js' %}"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="{% static '/css/stylesheet3.css' %}" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>knooz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="{% static '/css/bootstrap.min.css' %}" />
+  
+  
+</head>
+
+<body>
+  {% block bg %}
+    <div class="center222">
+    <h1 class="header1">I Am...
+
+        <button class="btn1 b1 bb" id="bb">A Space</button>
+
+            <div class="content">                 
+                    <form method="POST" autocomplete="off" action="/amI/">
+                        {% csrf_token %}
+                            <input type="password"  class="search__input" id="search__input" placeholder="Password" name="paswrd" required  |safe> 
+                            <button type="submit" class="ee3a" name="space1"> <img class="ee3e" src="{% static '/imgs/wormhole.png' %}" alt="" /> </button>
+                      <!--    <input type="submit" src="{% static '/imgs/wormhole.png' %}" name="space1" class="ee3a" value="" /> -->
+                    </form>
+                 </div>
+
+                 
+
+
+                 <button class="btn1 b2 bb" id="bbb">An Alien</button>
+                 <div class="content">                 
+                  <form method="POST" autocomplete="off" action="/amI/">
+                      {% csrf_token %}
+                          <input type="password"  class="search__input" id="search__inputb" placeholder="Password" name="paswrd" required  |safe> 
+                          <button type="submit" class="ee3a" name="alien1"> <img class="ee3e" src="{% static '/imgs/wormhole.png' %}" alt="" /> </button>
+                    <!--    <input type="submit" src="{% static '/imgs/wormhole.png' %}" name="space1" class="ee3a" value="" /> -->
+                  </form>
+               </div>
+
+
+
+
+
+
+                 <form method="POST" action="/amI/">{% csrf_token %}
+                  <a style="text-decoration:none" > <button type="submit" class="btn1 b3" name="human1">A Human</button> </a></form>
+            
+
+    </h1>
+    
+    
+
+    
+      
+  </div>
+
+  <script>
+
+    document.getElementById("bb").onclick = function() {myFunction()};
+    function myFunction() {  
+    // document.getElementById("search__input").style.fontSize = '240px';               
+      document.getElementById("search__input").className='active';             
+      }
+
+
+      document.getElementById("bbb").onclick = function() {myFunctionn()};
+    function myFunctionn() {  
+    // document.getElementById("search__input").style.fontSize = '240px';               
+      document.getElementById("search__inputb").className='active';             
+      }
+
+</script>
+
+  {% endblock %}
+</body>
+</html>
